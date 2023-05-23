@@ -1,0 +1,38 @@
+<svg id="bba743e6-2987-4b87-a178-90a7ed379753" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250 250">
+  <defs>
+    <style>
+      .a233c12d-fa90-49c3-ae19-4a3d06bed4a6, .aec01d09-f33b-4365-9636-5e02f8567e4e, .b90b7f66-89e9-4c84-b3da-8f95de43711e {
+        fill: #fff;
+      }
+
+      .a233c12d-fa90-49c3-ae19-4a3d06bed4a6, .aac41f19-477b-4c99-8358-c3c5d0446e4a, .aec01d09-f33b-4365-9636-5e02f8567e4e, .b90b7f66-89e9-4c84-b3da-8f95de43711e {
+        stroke: #000;
+        stroke-linejoin: round;
+      }
+
+      .aec01d09-f33b-4365-9636-5e02f8567e4e, .b90b7f66-89e9-4c84-b3da-8f95de43711e {
+        stroke-width: 5px;
+      }
+
+      .a233c12d-fa90-49c3-ae19-4a3d06bed4a6, .aac41f19-477b-4c99-8358-c3c5d0446e4a, .b90b7f66-89e9-4c84-b3da-8f95de43711e {
+        stroke-linecap: round;
+      }
+
+      .aac41f19-477b-4c99-8358-c3c5d0446e4a {
+        fill: none;
+      }
+
+      .a233c12d-fa90-49c3-ae19-4a3d06bed4a6, .aac41f19-477b-4c99-8358-c3c5d0446e4a {
+        stroke-width: 3px;
+      }
+    </style>
+  </defs>
+  <g>
+    <path id="f85b7fd1-2852-4ab6-9859-29062ad86e4e" data-name="Group 1" class="aec01d09-f33b-4365-9636-5e02f8567e4e" d="M161.92,113.75l40.45-23.26a1.28,1.28,0,0,1,1.91,1.11v68.18a1.28,1.28,0,0,1-1.91,1.1l-40.45-23.26"/>
+    <rect id="a03a99fc-616a-4f95-976e-a6115e6fd1ef" data-name="Group 1" class="b90b7f66-89e9-4c84-b3da-8f95de43711e" x="45.72" y="71.12" width="115.22" height="109.13" rx="4.91"/>
+    <line id="a80fa340-00ff-487a-8536-c72f9225c6b1" data-name="Group 1" class="aac41f19-477b-4c99-8358-c3c5d0446e4a" x1="68.62" y1="145.32" x2="138.84" y2="145.32"/>
+    <line id="a9dbc9a3-06fe-44f1-9431-5b5aa446a466" data-name="Group 1" class="aac41f19-477b-4c99-8358-c3c5d0446e4a" x1="68.62" y1="109.7" x2="138.84" y2="109.7"/>
+    <circle id="f875d2be-1b67-4b9e-971f-bacfc4ab44bb" data-name="Group 1" class="a233c12d-fa90-49c3-ae19-4a3d06bed4a6" cx="80.83" cy="145.19" r="7.12"/>
+    <circle id="b3338d46-b8e4-4e11-b514-4874470420af" data-name="Group 1" class="a233c12d-fa90-49c3-ae19-4a3d06bed4a6" cx="125.58" cy="108.69" r="7.12"/>
+  </g>
+</svg>

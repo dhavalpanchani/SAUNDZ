@@ -1,0 +1,47 @@
+<svg id="b761d522-dfed-4f32-b797-070d241fda0f" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250 250">
+  <defs>
+    <style>
+      .b9e9b1af-4eb7-48f3-aa88-3c57b062c2d1 {
+        fill: #fff;
+      }
+
+      .ae78f342-c874-46f3-a6fd-19007141c3d4, .b9e9b1af-4eb7-48f3-aa88-3c57b062c2d1 {
+        stroke: #000;
+      }
+
+      .ae78f342-c874-46f3-a6fd-19007141c3d4, .b644845c-0428-452f-88ef-ca2bf6712528, .b9e9b1af-4eb7-48f3-aa88-3c57b062c2d1 {
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+
+      .b644845c-0428-452f-88ef-ca2bf6712528, .b9e9b1af-4eb7-48f3-aa88-3c57b062c2d1 {
+        stroke-width: 5px;
+      }
+
+      .ae78f342-c874-46f3-a6fd-19007141c3d4, .b644845c-0428-452f-88ef-ca2bf6712528 {
+        fill: none;
+      }
+
+      .ae78f342-c874-46f3-a6fd-19007141c3d4 {
+        stroke-width: 3px;
+      }
+
+      .b644845c-0428-452f-88ef-ca2bf6712528 {
+        stroke: #3b27ff;
+      }
+    </style>
+  </defs>
+  <g>
+    <circle class="b9e9b1af-4eb7-48f3-aa88-3c57b062c2d1" cx="125" cy="125" r="67.61" transform="translate(-0.66 0.67) rotate(-0.3)"/>
+    <g>
+      <path class="ae78f342-c874-46f3-a6fd-19007141c3d4" d="M156.67,154.13a43.51,43.51,0,0,1-65.11-2.64"/>
+      <polyline class="ae78f342-c874-46f3-a6fd-19007141c3d4" points="90.97 164.23 91.37 150.87 104.73 151.27"/>
+    </g>
+    <path class="b644845c-0428-452f-88ef-ca2bf6712528" d="M84.29,138.73a43.57,43.57,0,0,1,38-57.11"/>
+    <polyline class="b644845c-0428-452f-88ef-ca2bf6712528" points="112.03 73.89 122.76 81.86 114.79 92.59"/>
+    <g>
+      <path class="ae78f342-c874-46f3-a6fd-19007141c3d4" d="M136.31,83.4a43.56,43.56,0,0,1,26.4,62.85"/>
+      <polyline class="ae78f342-c874-46f3-a6fd-19007141c3d4" points="175.12 141.26 162.92 146.72 157.46 134.53"/>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,32 @@
+<svg id="b2d554da-32e9-4e75-b805-f1baca128171" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250 250">
+  <defs>
+    <style>
+      .a091cb2b-9050-4a22-9717-9313e7b768d3 {
+        fill: #3b27ff;
+        opacity: 0.73;
+      }
+
+      .a2945b4e-9c68-446e-8c79-bb05b6aa8975 {
+        fill: none;
+      }
+
+      .a28c36e6-5721-4fce-8ade-79c128cbe68a, .a2945b4e-9c68-446e-8c79-bb05b6aa8975 {
+        stroke: #fff;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 4px;
+      }
+
+      .a28c36e6-5721-4fce-8ade-79c128cbe68a {
+        fill: #575ffe;
+      }
+    </style>
+  </defs>
+  <g>
+    <path class="a091cb2b-9050-4a22-9717-9313e7b768d3" d="M204.9,87.65a3.79,3.79,0,0,0-3.77,0l-37.68,21.54V75.35A7.42,7.42,0,0,0,156,67.94H50.63a7.41,7.41,0,0,0-7.41,7.41v99.3a7.41,7.41,0,0,0,7.41,7.41H156a7.42,7.42,0,0,0,7.41-7.41V140.83l37.68,21.53a3.7,3.7,0,0,0,1.87.5,3.77,3.77,0,0,0,3.78-3.77V90.91A3.78,3.78,0,0,0,204.9,87.65Z"/>
+    <line id="b510b558-1547-49cd-b363-2fe075b497b1" data-name="Group 1" class="a2945b4e-9c68-446e-8c79-bb05b6aa8975" x1="68.62" y1="144.63" x2="138.84" y2="144.63"/>
+    <line id="e2f3b2a4-37c4-4831-9a5a-043f481b4c65" data-name="Group 1" class="a2945b4e-9c68-446e-8c79-bb05b6aa8975" x1="68.62" y1="109.01" x2="138.84" y2="109.01"/>
+    <circle id="b8831a82-bba6-495d-84f0-a360dc3f26ee" data-name="Group 1" class="a28c36e6-5721-4fce-8ade-79c128cbe68a" cx="80.83" cy="144.5" r="7.12"/>
+    <circle id="b9723b2d-4013-4f58-b5f6-2b4febb7ca29" data-name="Group 1" class="a28c36e6-5721-4fce-8ade-79c128cbe68a" cx="125.58" cy="108" r="7.12"/>
+  </g>
+</svg>

@@ -1,0 +1,27 @@
+<svg id="b3e2cf24-63c6-4366-adc9-061bf86cbf96" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250 250">
+  <defs>
+    <style>
+      .ae3e3c5e-42c2-4145-a19c-f0ccda975298 {
+        fill: #fff;
+        stroke-width: 5px;
+      }
+
+      .ae3e3c5e-42c2-4145-a19c-f0ccda975298, .b3a2f603-09c8-487b-a409-0650f64e1b9b {
+        stroke: #000;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+
+      .b3a2f603-09c8-487b-a409-0650f64e1b9b {
+        fill: none;
+        stroke-width: 3px;
+      }
+    </style>
+  </defs>
+  <g>
+    <path class="ae3e3c5e-42c2-4145-a19c-f0ccda975298" d="M58.9,94.78c.52-19.15,15.5-35,34.63-36.06a572.92,572.92,0,0,1,62.44,0,36.8,36.8,0,0,1,34.56,35q1.47,31.85.1,62.78a36.86,36.86,0,0,1-35.39,35q-30.36,1.2-60.89,0a37.06,37.06,0,0,1-35.47-36.12C58.54,143,58.81,107.2,58.9,94.78Z"/>
+    <path class="b3a2f603-09c8-487b-a409-0650f64e1b9b" d="M168.55,89a12.82,12.82,0,1,1-12.82-12.83A12.82,12.82,0,0,1,168.55,89Z"/>
+    <polyline class="b3a2f603-09c8-487b-a409-0650f64e1b9b" points="58.88 157 102.75 97 138.88 145"/>
+    <polyline class="b3a2f603-09c8-487b-a409-0650f64e1b9b" points="105.56 191.27 157.27 120.85 189.92 163.98"/>
+  </g>
+</svg>

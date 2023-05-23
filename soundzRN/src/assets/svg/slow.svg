@@ -1,0 +1,26 @@
+<svg id="aa9534eb-4ef6-4f56-b4ca-4dd3628362cd" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250 250">
+  <defs>
+    <style>
+      .bef1a598-f615-4767-9593-5e320e408262 {
+        fill: #fff;
+        stroke-width: 5px;
+      }
+
+      .bbf59d96-cd4e-4eb6-9eca-6b6060cd1007, .bef1a598-f615-4767-9593-5e320e408262 {
+        stroke: #000;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+
+      .bbf59d96-cd4e-4eb6-9eca-6b6060cd1007 {
+        fill: none;
+        stroke-width: 3px;
+      }
+    </style>
+  </defs>
+  <g>
+    <path class="bef1a598-f615-4767-9593-5e320e408262" d="M57.39,125A67.61,67.61,0,1,0,125,57.39,67.61,67.61,0,0,0,57.39,125Z"/>
+    <path class="bbf59d96-cd4e-4eb6-9eca-6b6060cd1007" d="M85.72,123.87s35.63-6.82,39.42-6.75a7.52,7.52,0,0,1-.29,15C120.65,132.08,85.72,123.87,85.72,123.87Z"/>
+    <path class="bbf59d96-cd4e-4eb6-9eca-6b6060cd1007" d="M178.31,125a53.31,53.31,0,0,0-106.62,0"/>
+  </g>
+</svg>

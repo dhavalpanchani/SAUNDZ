@@ -1,0 +1,40 @@
+<svg id="b969f63c-b9fb-4dcb-8a15-4226b1ca6e0d" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 250 250">
+  <defs>
+    <style>
+      .bc9284be-8820-4b7a-a37c-8ed150724f92 {
+        fill: none;
+      }
+
+      .a799b8f9-7757-4157-bb45-917a8ba64323 {
+        opacity: 0.73;
+      }
+
+      .f2c42425-103e-4808-b93a-a88d91bf0991 {
+        clip-path: url(#e8abfdb4-18e6-4f6b-bc03-a1fa674b0e4d);
+      }
+
+      .e8e0ee5f-0d2c-46fd-a86a-25790d96072b {
+        fill: #3b27ff;
+      }
+
+      .a55ed6f8-2789-4a7b-a998-644c790b75b7 {
+        fill: #f40b37;
+        stroke: #fff;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 4px;
+      }
+    </style>
+    <clipPath id="e8abfdb4-18e6-4f6b-bc03-a1fa674b0e4d">
+      <rect class="bc9284be-8820-4b7a-a37c-8ed150724f92" x="54.89" y="54.9" width="140.22" height="140.21"/>
+    </clipPath>
+  </defs>
+  <g>
+    <g class="a799b8f9-7757-4157-bb45-917a8ba64323">
+      <g class="f2c42425-103e-4808-b93a-a88d91bf0991">
+        <path class="e8e0ee5f-0d2c-46fd-a86a-25790d96072b" d="M195.11,125A70.11,70.11,0,1,1,125,54.9,70.19,70.19,0,0,1,195.11,125"/>
+      </g>
+    </g>
+    <path class="a55ed6f8-2789-4a7b-a998-644c790b75b7" d="M125,147.64h0A22.64,22.64,0,1,1,147.64,125,22.64,22.64,0,0,1,125,147.64Z"/>
+  </g>
+</svg>
