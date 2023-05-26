@@ -7,6 +7,7 @@ import {
   Dimensions,
   Image,
   Linking,
+  NativeModules,
   PermissionsAndroid,
   Platform,
   SafeAreaView,
@@ -18,6 +19,7 @@ import {
   useColorScheme,
   View,
 } from 'react-native';
+
 import Video from 'react-native-video';
 import LessionsList from './LessionsList';
 import EvilIcons from 'react-native-vector-icons/EvilIcons';
@@ -62,6 +64,16 @@ import Delete_Active from '../assets/svg/delete-active.svg';
 import Delete from '../assets/svg/delete.svg';
 import Send_Recording_Active from '../assets/svg/send recording-active.svg';
 import Send_Recording from '../assets/svg/send recording.svg';
+
+import {
+  FFmpegKit,
+  FFmpegCommand,
+  FFmpegKitConfig,
+  ReturnCode,
+} from 'ffmpeg-kit-react-native';
+
+import FFmpeg from 'ffmpeg-kit-react-native';
+import {Level} from 'ffmpeg-kit-react-native';
 
 const audioRecorderPlayer = new AudioRecorderPlayer();
 
@@ -126,10 +138,13 @@ function MainScreen() {
 
   // Recording temp paths
   const dirs = RNFetchBlob.fs.dirs;
+
   const path = Platform.select({
-    android: `${dirs.MusicDir}/${new Date().getTime()}SAUNDZ.mp3`,
-    ios: `${new Date().getTime()}SAUNDZ.m4a`,
+    android: `${dirs.DownloadDir}/${new Date().getTime()}SAUNDZ.mp3`,
+    ios: `file://${dirs.DocumentDir}/${new Date().getTime()}SAUNDZ.m4a`,
   });
+
+  console.log('path1 ===> 1', path);
 
   const [recordingDataArr, setRecordingDataArr] = useState([]);
 
@@ -578,6 +593,42 @@ function MainScreen() {
     }
   };
 
+  // const getCurrentAudio = () => {
+  //   if (wordsList[wordIndex]) {
+  //     if (pointer == -1) {
+  //       const side_word_string = `word_${wordsList[wordIndex]
+  //         .toLowerCase()
+  //         .trim('')}.mp3`;
+
+  //       const sideVideoData = videoList.filter(
+  //         obj => obj.name == side_word_string,
+  //       );
+  //       console.log('WORD VIDEO SIDE ', sideVideoData);
+  //       if (sideVideoData == '') {
+  //         return require('../../android/saundz_asset_pack/src/main/assets/audio/words_mp3/word_huh.mp3');
+  //       } else {
+  //         return sideVideoData[0].audio;
+  //       }
+  //     } else {
+  //       const side_phoneme_string = `phoneme_${alphaWords[wordIndex]
+  //         .split(',')
+  //         [pointer].trim('')}.mp3`;
+
+  //       const sideVideoData = videoList.filter(
+  //         obj => obj.name == side_phoneme_string,
+  //       );
+  //       // console.log('WORD VIDEO SIDE ', sideVideoData)
+  //       if (sideVideoData == '') {
+  //         return require('../../android/saundz_asset_pack/src/main/assets/audio/words_mp3/word_huh.mp3');
+  //       } else {
+  //         return sideVideoData[0].audio;
+  //       }
+  //     }
+  //   } else {
+  //     return require('../../android/saundz_asset_pack/src/main/assets/audio/words_mp3/word_huh.mp3');
+  //   }
+  // };
+
   const getSideVideo = () => {
     if (wordsList[wordIndex]) {
       if (pointer == -1) {
@@ -797,12 +848,14 @@ function MainScreen() {
   const [isPlaying, setIsPlaying] = useState(false);
 
   const startPlaying = async recordIndex => {
-    const path = selectedWordRecord?.[`record${recordIndex}`]?.url;
+    const audioPath = true
+      ? '../assets/simone/phoneme_aa.mp3'
+      : selectedWordRecord?.[`record${recordIndex}`]?.url;
 
     try {
       console.log('Playback started');
       setIsPlaying(true);
-      await audioRecorderPlayer.startPlayer(path);
+      await audioRecorderPlayer.startPlayer(audioPath);
 
       audioRecorderPlayer.addPlayBackListener(e => {
         console.log('addPlayBackListener ===> ', e);
@@ -879,7 +932,12 @@ function MainScreen() {
 
       console.log('Recording started');
     } catch (error) {
-      console.log('Error starting recording:', error);
+      console.log(
+        'Error starting recording:',
+        error,
+        error?.response,
+        error?.message,
+      );
     }
   };
 
@@ -1001,7 +1059,33 @@ function MainScreen() {
               )}
             </TouchableOpacity>
 
-            <TouchableOpacity style={{height: 60, aspectRatio: 1}}>
+            <TouchableOpacity
+              style={{
+                height: 60,
+                aspectRatio: 1,
+                alignItems: 'center',
+                justifyContent: 'center',
+              }}
+              onPress={() => {
+                playMergeAudioFiles(
+                  selectedWordRecord?.[`record${defaultIndexNumber}`]?.url,
+                  defaultIndexNumber,
+                );
+              }}>
+              <Image
+                source={require('../assets/svg/merge-listen.png')}
+                style={{height: '60%', aspectRatio: 1, resizeMode: 'contain'}}
+              />
+            </TouchableOpacity>
+
+            <TouchableOpacity
+              onPress={() => {
+                onTrimAudioClip(
+                  selectedWordRecord?.[`record${defaultIndexNumber}`]?.url,
+                  defaultIndexNumber,
+                );
+              }}
+              style={{height: 60, aspectRatio: 1}}>
               {true ? (
                 <Send_Recording height={'100%'} width={'100%'} />
               ) : (
@@ -1039,6 +1123,65 @@ function MainScreen() {
         )}
       </View>
     );
+  };
+
+  const playMergeAudioFiles = async (inputFilePath, defaultIndexNumber) => {
+    audioRecorderPlayer.stopPlayer();
+    audioRecorderPlayer.removePlayBackListener();
+
+    const leftAudioPath = inputFilePath;
+    const rightAudioPath = '../assets/simone/phoneme_aa.mp3';
+    let outputPath = path;
+
+    console.log('outputFilePath  ===> ', outputPath);
+    const command = `-i ${leftAudioPath} -i ${rightAudioPath} -filter_complex "[0:a][1:a]amerge=inputs=2[aout]" -map "[aout]" -ac 2 ${outputPath}`;
+
+    FFmpegKitConfig.enableLogCallback(log => {
+      console.log(log.getMessage());
+    });
+
+    try {
+      await FFmpegKit.executeAsync(command);
+      onTrimSuccess(defaultIndexNumber, outputPath);
+      console.log('Command execution completed successfully.');
+    } catch (e) {
+      console.log(
+        `Command execution failed with rc=${e.rc}, commandOutput=${
+          e.commandOutput
+        }, causedBy=${e.getCausedBy()}, failStackTrace=${e.getFailStackTrace()}`,
+      );
+    }
+  };
+
+  const onTrimAudioClip = async (inputFilePath, defaultIndexNumber) => {
+    const outputFilePath = path;
+
+    // let startThreshold =Platform?.OS === 'android' ?'-50db' : '-40db'
+    const command1 = `-i ${inputFilePath} -af "silenceremove=start_periods=1:start_duration=1:start_threshold=-50dB:detection=peak,aformat=dblp,areverse,silenceremove=start_periods=1:start_duration=1:start_threshold=-50dB:detection=peak,aformat=dblp,areverse" ${outputFilePath}`;
+
+    try {
+      await FFmpegKit.executeAsync(command1);
+      onTrimSuccess(defaultIndexNumber, outputFilePath);
+      console.log('Command execution completed successfully.');
+    } catch (e) {
+      console.log(
+        `Command execution failed with rc=${e.rc}, commandOutput=${
+          e.commandOutput
+        }, causedBy=${e.getCausedBy()}, failStackTrace=${e.getFailStackTrace()}`,
+      );
+    }
+  };
+
+  const onTrimSuccess = (defaultIndexNumber, outputFilePath) => {
+    let trimedRecordDataArr = recordingDataArr?.map(el =>
+      el?.title ===
+      `${selectedValue?.lesson_num}_${wordsList[wordIndex]?.replace(' ', '')}`
+        ? {...el, [`record${defaultIndexNumber}`]: {url: outputFilePath}}
+        : el,
+    );
+
+    setRecordingDataArr(trimedRecordDataArr);
+    AsyncStorage.setItem('RECORDED_DATA', JSON.stringify(trimedRecordDataArr));
   };
 
   return (
